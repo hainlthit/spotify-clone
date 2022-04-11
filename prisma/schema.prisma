@@ -17,20 +17,31 @@ model User {
   updatedAt DateTime @updatedAt
   email     String   @unique
   password  String
+  playlists Playlist[]
 }
 
 model Song {
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id        Int        @id @default(autoincrement())
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
   name      String
-  artist    Artist   @relation(fields: [artistId], references: [id])
+  artist    Artist     @relation(fields: [artistId], references: [id])
   artistId  Int
+  playlists Playlist[]
 }
 
 model Artist {
   id        Int      @id @default(autoincrement())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  songs      Song[]
+  songs     Song[]
+  name      String   @unique
+}
+
+model Playlist {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  name      String
+  songs      Song[]    
 }
