@@ -5,7 +5,7 @@ import styles from "../styles/Home.module.css";
 export default function Home() {
   return (
     <div>
-        CoochieTown Music App
+        Music App for Music App by Music App
     </div>
   );
 }
