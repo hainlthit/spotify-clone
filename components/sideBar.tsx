@@ -61,8 +61,8 @@ const SideBar = () => {
       color="black"
     >
       <Box paddingY="20px" height="100%">
-        <Box width="120px" marginBottom="20px">
-          <NextImage src="/logo.jpg" height={100} width={100} />
+        <Box width="120px" marginBottom="10px">
+          <NextImage src="/logo.png" height={125} width={125} />
         </Box>
         <Box marginBottom="20px">
           <List spacing={2}>
