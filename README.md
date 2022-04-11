@@ -4,11 +4,11 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 Making a spotify clone.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+using
+next.js
+typescript
+react
+chakra.ui
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
