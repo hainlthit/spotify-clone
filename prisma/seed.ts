@@ -4,7 +4,7 @@ import { artistsData } from "./songsData";
 
 const prisma = new PrismaClient();
 
-const run = (async = () => {
+const run = async () => {
   await Promise.all(
     artistsData.map(async (artist) => {
       return prisma.artist.upsert({
@@ -23,7 +23,7 @@ const run = (async = () => {
       });
     })
   );
-});
+};
 
 run()
   .catch((e) => {
@@ -31,5 +31,5 @@ run()
     process.exit(1);
   })
   .finally(async () => {
-    await prisma.$disconnect();
+    prisma.$disconnect();
   });
