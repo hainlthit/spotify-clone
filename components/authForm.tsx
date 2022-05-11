@@ -20,7 +20,7 @@ const AuthForm = ({ mode }) => {
   }
 
   return (
-    <Box height="100vh" width="100vh" bg="pink">
+    <Box height="100vh" width="100%" bg="pink">
       <Flex justify="center" align="center" height="100px">
         hello
       </Flex>

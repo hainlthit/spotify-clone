@@ -1,5 +1,5 @@
-import NextImage from "next/image";
-import NextLink from "next/link";
+import NextImage from 'next/image'
+import NextLink from 'next/link'
 import {
   Box,
   List,
@@ -9,60 +9,62 @@ import {
   Center,
   LinkBox,
   LinkOverlay,
-} from "@chakra-ui/layout";
+} from '@chakra-ui/layout'
 import {
   MdHome,
   MdSearch,
   MdLibraryMusic,
   MdPlaylistAdd,
   MdFavorite,
-} from "react-icons/md";
+} from 'react-icons/md'
+import { usePlaylist } from '../lib/hooks'
 
 const navMenu = [
   {
-    name: "Home",
+    name: 'Home',
     icon: MdHome,
-    route: "/",
+    route: '/',
   },
   {
-    name: "Search",
+    name: 'Search',
     icon: MdSearch,
-    route: "/search",
+    route: '/search',
   },
   {
-    name: "Your Library",
+    name: 'Your Library',
     icon: MdLibraryMusic,
-    route: "/library",
+    route: '/library',
   },
-];
+]
 
 const musicMenu = [
   {
-    name: "Create Playlist",
+    name: 'Create Playlist',
     icon: MdPlaylistAdd,
-    route: "/",
+    route: '/',
   },
   {
-    name: "Favorites",
+    name: 'Favorites',
     icon: MdFavorite,
-    route: "/favorites",
+    route: '/favorites',
   },
-];
+]
 
-const playlists = new Array(30).fill(1).map((_, i) => `Playlist ${i + 1}`);
+// const playlists = new Array(30).fill(1).map((_, i) => `Playlist ${i + 1}`)
 
-const SideBar = () => {
+const Sidebar = () => {
+  const { playlists } = usePlaylist()
   return (
     <Box
       width="100%"
       height="calc(100vh - 100px)"
       bg="pink"
       paddingX="5px"
-      color="black"
+      color="gray"
     >
       <Box paddingY="20px" height="100%">
-        <Box width="120px" marginBottom="10px">
-          <NextImage src="/logo.png" height={125} width={125} />
+        <Box width="120px" marginBottom="20px" paddingX="20px">
+          <NextImage src="/logo.png" height={150} width={150} />
         </Box>
         <Box marginBottom="20px">
           <List spacing={2}>
@@ -84,8 +86,7 @@ const SideBar = () => {
             ))}
           </List>
         </Box>
-
-        <Box marginBottom="20px">
+        <Box marginTop="20px">
           <List spacing={2}>
             {musicMenu.map((menu) => (
               <ListItem paddingX="20px" fontSize="16px" key={menu.name}>
@@ -106,13 +107,13 @@ const SideBar = () => {
           </List>
         </Box>
         <Divider color="gray.800" />
-        <Box height="60%" overflowY="auto" paddingY="20px">
-          <List spacing={2}>
+        <Box height="66%" overflowY="auto" paddingY="20px">
+          <List spaceing={2}>
             {playlists.map((playlist) => (
-              <ListItem paddingX="20px" key={playlist}>
+              <ListItem paddingX="20px" key={playlist.id}>
                 <LinkBox>
-                  <NextLink href="/">
-                    <LinkOverlay>{playlist}</LinkOverlay>
+                  <NextLink href="/" passHref>
+                    <LinkOverlay>{playlist.name}</LinkOverlay>
                   </NextLink>
                 </LinkBox>
               </ListItem>
@@ -121,7 +122,7 @@ const SideBar = () => {
         </Box>
       </Box>
     </Box>
-  );
-};
+  )
+}
 
-export default SideBar;
+export default Sidebar
