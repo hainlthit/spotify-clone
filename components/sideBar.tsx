@@ -58,7 +58,7 @@ const Sidebar = () => {
     <Box
       width="100%"
       height="calc(100vh - 100px)"
-      bg="pink"
+      bg="black"
       paddingX="5px"
       color="gray"
     >
@@ -75,7 +75,7 @@ const Sidebar = () => {
                     <LinkOverlay>
                       <ListIcon
                         as={menu.icon}
-                        color="black"
+                        color="grey"
                         marginRight="20px"
                       />
                       {menu.name}
@@ -95,7 +95,7 @@ const Sidebar = () => {
                     <LinkOverlay>
                       <ListIcon
                         as={menu.icon}
-                        color="black"
+                        color="grey"
                         marginRight="20px"
                       />
                       {menu.name}
