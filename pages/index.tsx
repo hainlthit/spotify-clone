@@ -12,8 +12,8 @@ const Home = ({ artists }) => {
       roundImage
       color="pink"
       subtitle="profile"
-      title="Hain Thit"
-      description="15 public playlists"
+      title={`${user?.firstName} ${user?.lastName}`}
+      description={`${user?.playlistsCount} public playlists`}
       image="https://i.kym-cdn.com/entries/icons/original/000/040/241/anya_heh_thumbnail.jpg"
     >
       <Box color="white" paddingX="40px">
