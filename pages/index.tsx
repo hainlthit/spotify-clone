@@ -10,11 +10,11 @@ const Home = ({ artists }) => {
   return (
     <GradientLayout
       roundImage
-      color="pink"
+      color="gray"
       subtitle="profile"
       title={`${user?.firstName} ${user?.lastName}`}
       description={`${user?.playlistsCount} public playlists`}
-      image="https://i.kym-cdn.com/entries/icons/original/000/040/241/anya_heh_thumbnail.jpg"
+      image="https://dl.dropboxusercontent.com/s/bgiv0ssz3xpotz9/peep.png?dl=0"
     >
       <Box color="white" paddingX="40px">
         <Box marginBottom="40px">
